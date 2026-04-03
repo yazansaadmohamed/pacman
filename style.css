@@ -1,0 +1,112 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body, html { width: 100%; height: 100%; overflow: hidden; background: #000; font-family: 'Arial', sans-serif; }
+
+#gameContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background: #000;
+}
+
+#gameCanvas {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+#ui-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+#hud {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  pointer-events: none;
+  z-index: 10;
+}
+
+#hud span {
+  color: #fff;
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(255,255,0,0.5);
+  letter-spacing: 2px;
+}
+
+#startScreen, #gameOverScreen {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.85);
+  pointer-events: auto;
+  z-index: 20;
+}
+
+#startScreen h1, #gameOverScreen h1 {
+  color: #FFD700;
+  font-size: 72px;
+  margin-bottom: 30px;
+  text-shadow: 0 0 20px rgba(255,215,0,0.7), 0 0 40px rgba(255,215,0,0.4);
+  letter-spacing: 8px;
+}
+
+#startScreen p, #gameOverScreen p {
+  color: #ccc;
+  font-size: 22px;
+  margin-bottom: 12px;
+}
+
+#startBtn, #restartBtn {
+  margin-top: 30px;
+  padding: 16px 48px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  background: linear-gradient(180deg, #FFD700, #FFA500);
+  border: 3px solid #FFD700;
+  border-radius: 12px;
+  cursor: pointer;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+#startBtn:hover, #restartBtn:hover {
+  background: linear-gradient(180deg, #FFF176, #FFD700);
+  border-color: #FFF176;
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(255,215,0,0.6);
+}
+
+#startBtn:active, #restartBtn:active {
+  transform: scale(0.97);
+}
+
+#gameOverTitle {
+  color: #FF4444 !important;
+  text-shadow: 0 0 20px rgba(255,68,68,0.7), 0 0 40px rgba(255,68,68,0.4) !important;
+}
+
+#finalScore {
+  font-size: 32px !important;
+  color: #FFD700 !important;
+}
