@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pac-Man</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="gameContainer">
+    <canvas id="gameCanvas" width="1280" height="1280"></canvas>
+    <div id="ui-layer">
+      <div id="hud">
+        <span id="scoreDisplay">Score: 0</span>
+        <span id="livesDisplay">Lives: 3</span>
+      </div>
+      <div id="startScreen">
+        <h1>PAC-MAN</h1>
+        <p>Use Arrow Keys or WASD to move</p>
+        <p>Eat all pellets to win!</p>
+        <p>Avoid the ghosts!</p>
+        <button id="startBtn">START GAME</button>
+      </div>
+      <div id="gameOverScreen" style="display:none;">
+        <h1 id="gameOverTitle">GAME OVER</h1>
+        <p id="finalScore">Score: 0</p>
+        <button id="restartBtn">PLAY AGAIN</button>
+      </div>
+    </div>
+  </div>
+  <script src="GameObject.js"></script>
+  <script src="Maze.js"></script>
+  <script src="PacMan.js"></script>
+  <script src="Ghost.js"></script>
+  <script src="Pellet.js"></script>
+  <script src="Game.js"></script>
+  <script>
+    const game = new Game(document.getElementById('gameCanvas'));
+    window.game = game;
+    game.start();
+  </script>
+</body>
+</html>
